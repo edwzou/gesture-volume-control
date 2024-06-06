@@ -41,8 +41,8 @@ while True:
                 colorVol = (0, 0, 0)
 
     cv2.rectangle(img, (50, 150), (85, 400), (0, 0, 0), 3)
-    cv2.rectangle(img, (50, int(volBar)), (85, 400), (0, 0, 0), cv2.FILLED)
-    cv2.putText(img, f'{int(volPer)} %', (40, 450), cv2.FONT_HERSHEY_COMPLEX,
+    cv2.rectangle(img, (50, int(volBar)), (85, 400), (128, 128, 128), cv2.FILLED)
+    cv2.putText(img, f'{int(volPer)} %', (50, 450), cv2.FONT_HERSHEY_COMPLEX,
                 1, (0, 0, 0), 3)
 
     cTime = time.time()
@@ -50,7 +50,7 @@ while True:
     pTime = cTime
     cv2.putText(img, f'FPS: {int(fps)}', (10, 40), cv2.FONT_HERSHEY_COMPLEX,
                 1, (0, 0, 0), 3)
-    cv2.putText(img, f'Vol Set: {int(volSet)}', (400, 50), cv2.FONT_HERSHEY_COMPLEX,
+    cv2.putText(img, f'Vol Set: {int(volSet)}', (420, 40), cv2.FONT_HERSHEY_COMPLEX,
                 1, colorVol, 3)
 
     cv2.imshow('GestureVolumeControl', img)
