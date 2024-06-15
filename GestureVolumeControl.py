@@ -31,7 +31,7 @@ while True:
             volBar = np.interp(length, [50, 150], [400, 150])
             volPer = np.interp(length, [50, 150], [0, 100])
             fingers = detector.fingersUp()
-            if not fingers[4]:
+            if not fingers[3]: # detect ring finger because my pinky finger is not that flexible
                 volCommand = f"set volume output volume {int(vol)}"   # set volume
                 osascript.osascript(volCommand)
                 cv2.circle(img, (lineInfo[4], lineInfo[5]), 15, (0, 255, 0), cv2.FILLED)
